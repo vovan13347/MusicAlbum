@@ -17,6 +17,10 @@ class RockAlbum(db.Model):
             'title': self.title,
             'band': self.band
         }
+    
+def create_app_context():
+    with app.app_context():
+        db.create_all()
 
 @app.route('/albums', methods=['GET'])
 def get_albums():
@@ -61,4 +65,4 @@ def delete_album(id):
     return '', 204
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(host='0.0.0.0', port=5000)

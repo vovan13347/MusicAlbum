@@ -1,0 +1,10 @@
+{
+    "sqltools.connections": [
+        {
+            "previewLimit": 50,
+            "driver": "SQLite",
+            "name": "a1",
+            "database": "/instance/rock_albums.db"
+        }
+    ]
+}
