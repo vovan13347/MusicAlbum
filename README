@@ -1,0 +1,12 @@
+curl -X POST http://127.0.0.1:5000/albums \
+-H "Content-Type: application/json" \
+-d '{"title": "Back in Black", "band": "AC/DC"}'
+
+
+curl -X POST http://127.0.0.1:5000/albums -H "Content-Type: application/json" -d "{\"title\": \"Back in Black\", \"band\": \"AC/DC\"}"
+
+
+curl -X PUT http://127.0.0.1:5000/albums/1 -H "Content-Type: application/json" -d "{\"title\": \"Highway to Hell\", \"band\": \"AC/DC\"}"
+
+curl -X DELETE http://127.0.0.1:5000/albums/1
+
