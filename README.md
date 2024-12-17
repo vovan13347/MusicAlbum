@@ -16,13 +16,13 @@ SQLAlchemy==2.0.36
 typing_extensions==4.12.2
 Werkzeug==3.1.3
 ```
-Примеры CURL запросов:
+# Примеры CURL запросов:
+____
 
+1. получение данных: `curl -X GET http://193.176.153.205:5000/albums`
 
-1.получение данных: `curl -X GET http://193.176.153.205:5000/albums`
+2. получение данных: `curl -X POST http://193.176.153.205:5000/albums -H "Content-Type: application/json" -d "{\"title\": \"Back in Black\", \"band\": \"AC/DC\"}"`
 
-2.получение данных: `curl -X POST http://193.176.153.205:5000/albums -H "Content-Type: application/json" -d "{\"title\": \"Back in Black\", \"band\": \"AC/DC\"}"`
+3. обновление данных: `curl -X PUT http://193.176.153.205:5000/albums/8 -H "Content-Type: application/json" -d "{\"title\": \"Highway to Hell\", \"band\": \"AC/DC\"}"`
 
-3.обновление данных: `curl -X PUT http://193.176.153.205:5000/albums/8 -H "Content-Type: application/json" -d "{\"title\": \"Highway to Hell\", \"band\": \"AC/DC\"}"`
-
-4.удаление данных: `curl -X DELETE http://193.176.153.205:5000/albums/8`
+4. удаление данных: `curl -X DELETE http://193.176.153.205:5000/albums/8`
