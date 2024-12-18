@@ -26,3 +26,38 @@ ____
 3. обновление данных: `curl -X PUT http://193.176.153.205:5000/albums/8 -H "Content-Type: application/json" -d "{\"title\": \"Highway to Hell\", \"band\": \"AC/DC\"}"`
 
 4. удаление данных: `curl -X DELETE http://193.176.153.205:5000/albums/8`
+
+# name_service.service config
+____
+```
+[Unit]
+Description = text
+After=network.target
+
+[Service]
+User=root
+Group=root
+WorkingDirectory=/projects/musicalbum
+ExecStart=/projects/musicalbum/musicenv/bin/python3 name.py
+Restart=always
+RestartSec=10
+
+[Install]
+WantedBy=multi-user.target
+
+```
+
+3. перезапустить daemon командой:
+`sudo systemctl daemon-reload`
+
+4. активировать сервис, позволить ему стартовать во время запуска системы:
+`sudo systemctl enable name_service.service`
+
+5. запустить службу командой:
+`sudo systemctl start name_service.service`
+
+6. остановить активную службу:
+`sudo systemctl stop name_service.service`
+
+7. отключить автозапуск службы:
+`sudo systemctl disable name_service.service`
