@@ -26,8 +26,17 @@ ____
 3. обновление данных: `curl -X PUT http://193.176.153.205:5000/albums/8 -H "Content-Type: application/json" -d "{\"title\": \"Highway to Hell\", \"band\": \"AC/DC\"}"`
 
 4. удаление данных: `curl -X DELETE http://193.176.153.205:5000/albums/8`
+____
+## *Создание сервиса на Ubuntu-server:*
 
-# name_service.service config
+1. Создать файл сервиса командой:
+`touch /etc/systemd/system/name_service.service`
+
+2. Открыть файл сервиса командой:
+`sudo nano /etc/systemd/system/name_service.service`
+
+
+## name_service.service config
 ____
 ```
 [Unit]
@@ -38,7 +47,7 @@ After=network.target
 User=root
 Group=root
 WorkingDirectory=/projects/musicalbum
-ExecStart=/projects/musicalbum/musicenv/bin/python3 name.py
+ExecStart=/projects/musicalbum/musicenv/bin/python3 app.py
 Restart=always
 RestartSec=10
 
